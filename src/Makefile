@@ -1,4 +1,3 @@
-
 # files
 
 EXE = fruit
@@ -14,7 +13,7 @@ OBJS = attack.o board.o book.o eval.o fen.o hash.o list.o main.o material.o \
 all: $(EXE) .depend
 
 clean:
-	$(RM) *.o .depend gmon.out
+	$(RM) *.o .depend gmon.out $(EXE)
 
 # general
 
@@ -22,19 +21,22 @@ CXX      = g++
 CXXFLAGS = -pipe
 LDFLAGS  = -lm
 
-# C++
+# C++ flags for size optimization
 
-CXXFLAGS += -fno-exceptions -fno-rtti
+CXXFLAGS += -fno-exceptions -fno-rtti  # Disable exceptions and RTTI
+CXXFLAGS += -Os                        # Optimize for size
+CXXFLAGS += -fomit-frame-pointer       # Omit frame pointer for smaller code
+CXXFLAGS += -ffunction-sections -fdata-sections  # Enable garbage collection of unused code
+CXXFLAGS += -fno-asynchronous-unwind-tables  # Disable unwind tables
+CXXFLAGS += -fno-stack-protector       # Disable stack protection
+CXXFLAGS += -march=native              # Optimize for the current CPU architecture
 
-# optimisation
+# Linker flags for size optimization
 
-CXXFLAGS += -O3 -fstrict-aliasing
-CXXFLAGS += -fomit-frame-pointer
-# CXXFLAGS += -march=athlon-xp # SELECT ME
-
-# strip
-
-LDFLAGS += -s
+LDFLAGS += -s                          # Strip all symbols
+LDFLAGS += -Wl,--gc-sections           # Remove unused sections
+LDFLAGS += -Wl,--strip-all             # Strip all symbols from the binary
+LDFLAGS += -Wl,--as-needed             # Link only needed libraries
 
 # dependencies
 
@@ -45,4 +47,3 @@ $(EXE): $(OBJS)
 	$(CXX) -MM $(OBJS:.o=.cpp) > $@
 
 include .depend
-
