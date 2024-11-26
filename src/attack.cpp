@@ -64,7 +64,7 @@ void attack_init() {
 
    // knight attacks
 
-   for (dir = 0; dir < 4; dir++) {
+   for (dir = 0; dir < 8; dir++) {
 
       delta = KnightInc[dir];
       ASSERT(delta_is_ok(delta));
@@ -76,14 +76,14 @@ void attack_init() {
 
    // bishop/queen attacks
 
-   for (dir = 0; dir < 2; dir++) {
+   for (dir = 0; dir < 4; dir++) {
 
       inc = BishopInc[dir];
       ASSERT(inc!=IncNone);
 
       IncMask[IncOffset+inc] |= BishopFlag;
 
-      for (dist = 1; dist < 4; dist++) {
+      for (dist = 1; dist < 8; dist++) {
 
          delta = inc*dist;
          ASSERT(delta_is_ok(delta));
@@ -98,14 +98,14 @@ void attack_init() {
 
    // rook/queen attacks
 
-   for (dir = 0; dir < 2; dir++) {
+   for (dir = 0; dir < 4; dir++) {
 
       inc = RookInc[dir];
       ASSERT(inc!=IncNone);
 
       IncMask[IncOffset+inc] |= RookFlag;
 
-      for (dist = 1; dist < 4; dist++) {
+      for (dist = 1; dist < 8; dist++) {
 
          delta = inc*dist;
          ASSERT(delta_is_ok(delta));
@@ -120,7 +120,7 @@ void attack_init() {
 
    // king attacks
 
-   for (dir = 0; dir < 4; dir++) {
+   for (dir = 0; dir < 8; dir++) {
 
       delta = KingInc[dir];
       ASSERT(delta_is_ok(delta));
