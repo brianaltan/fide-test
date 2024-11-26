@@ -57,10 +57,10 @@ void attack_init() {
    // pawn attacks
 
    DeltaMask[DeltaOffset-17] |= BlackPawnFlag;
-   //DeltaMask[DeltaOffset-15] |= BlackPawnFlag;
+   DeltaMask[DeltaOffset-15] |= BlackPawnFlag;
 
    DeltaMask[DeltaOffset+15] |= WhitePawnFlag;
-   //DeltaMask[DeltaOffset+17] |= WhitePawnFlag;
+   DeltaMask[DeltaOffset+17] |= WhitePawnFlag;
 
    // knight attacks
 
