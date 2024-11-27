@@ -20,28 +20,28 @@
 static const bool UseTable = true;
 static const uint32 TableSize = 256; // 4kB
 
-static const int PawnPhase   = 0;
-static const int KnightPhase = 1;
-static const int BishopPhase = 1;
-static const int RookPhase   = 2;
-static const int QueenPhase  = 4;
+static const int PawnPhase   = 0; // Keep as is
+static const int KnightPhase = 0; // Change from 1 to 0
+static const int BishopPhase = 0; // Change from 1 to 0
+static const int RookPhase   = 1; // Keep as is
+static const int QueenPhase  = 2; // Change from 4 to 2
 
 static const int TotalPhase = PawnPhase * 16 + KnightPhase * 4 + BishopPhase * 4 + RookPhase * 4 + QueenPhase * 2;
 
 // constants and variables
 
-static /* const */ int MaterialWeight = 256; // 100%
+static /* const */ int MaterialWeight = 128; // 50%
 
-static const int PawnOpening   = 80; // was 100
-static const int PawnEndgame   = 90; // was 100
-static const int KnightOpening = 325;
-static const int KnightEndgame = 325;
-static const int BishopOpening = 325;
-static const int BishopEndgame = 325;
-static const int RookOpening   = 500;
-static const int RookEndgame   = 500;
-static const int QueenOpening  = 1000;
-static const int QueenEndgame  = 1000;
+static const int PawnOpening   = 60; // Change from 80 to 60
+static const int PawnEndgame   = 70; // Change from 90 to 70
+static const int KnightOpening = 300; // Change from 325 to 300
+static const int KnightEndgame = 300; // Keep as is
+static const int BishopOpening = 300; // Change from 325 to 300
+static const int BishopEndgame = 300; // Keep as is
+static const int RookOpening   = 480; // Change from 500 to 480
+static const int RookEndgame   = 480; // Keep as is
+static const int QueenOpening  = 960; // Change from 1000 to 960
+static const int QueenEndgame  = 960; // Keep as is
 
 static const int BishopPairOpening = 50;
 static const int BishopPairEndgame = 50;
