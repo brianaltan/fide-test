@@ -25,9 +25,9 @@
 
 // constants and variables
 
-static /* const */ int PieceActivityWeight = 128; // 50%
-static /* const */ int KingSafetyWeight = 128; // 50%
-static /* const */ int PassedPawnWeight = 128; // 50%
+static /* const */ int PieceActivityWeight = 64; // 25%
+static /* const */ int KingSafetyWeight = 64; // 25%
+static /* const */ int PassedPawnWeight = 64; // 25%
 
 static const int KnightUnit = 4;
 static const int BishopUnit = 6;
@@ -38,14 +38,14 @@ static const int MobMove = 1;
 static const int MobAttack = 1;
 static const int MobDefense = 0;
 
-static const int KnightMobOpening = 2; // Reduced from 4
-static const int KnightMobEndgame = 2; // Reduced from 4
-static const int BishopMobOpening = 3; // Reduced from 5
-static const int BishopMobEndgame = 3; // Reduced from 5
-static const int RookMobOpening = 1; // Reduced from 2
-static const int RookMobEndgame = 2; // Reduced from 4
-static const int QueenMobOpening = 1; // Remains the same
-static const int QueenMobEndgame = 1; // Reduced from 2
+static const int KnightMobOpening = 1; // Reduced from 2
+static const int KnightMobEndgame = 1; // Reduced from 2
+static const int BishopMobOpening = 2; // Reduced from 3
+static const int BishopMobEndgame = 2; // Reduced from 3
+static const int RookMobOpening = 0; // Reduced from 1
+static const int RookMobEndgame = 1; // Reduced from 2
+static const int QueenMobOpening = 0; // Reduced from 1
+static const int QueenMobEndgame = 0; // Reduced from 1
 static const int KingMobOpening = 0;
 static const int KingMobEndgame = 0;
 
@@ -61,24 +61,24 @@ static const bool UseKingAttack = true;
 static const int KingAttackOpening = 10; // Reduced from 20
 
 static const bool UseShelter = true;
-static const int ShelterOpening = 128; // Reduced from 256
+static const int ShelterOpening = 64; // Reduced from 128
 static const bool UseStorm = true;
-static const int StormOpening = 5; // Reduced from 10
+static const int StormOpening = 2; // Reduced from 5
 
 static const int Rook7thOpening = 20;
 static const int Rook7thEndgame = 40;
 static const int Queen7thOpening = 10;
 static const int Queen7thEndgame = 20;
 
-static const int TrappedBishop = 50; // Reduced from 100
-static const int BlockedBishop = 25; // Reduced from 50
+static const int TrappedBishop = 25; // Reduced from 50
+static const int BlockedBishop = 10; // Reduced from 25
 
-static const int BlockedRook = 25; // Reduced from 50
+static const int BlockedRook = 10; // Reduced from 25
 
-static const int PassedOpeningMin = 5; // Reduced from 10
-static const int PassedOpeningMax = 35; // Reduced from 70
-static const int PassedEndgameMin = 10; // Reduced from 20
-static const int PassedEndgameMax = 70; // Reduced from 140
+static const int PassedOpeningMin = 2; // Reduced from 5
+static const int PassedOpeningMax = 20; // Reduced from 35
+static const int PassedEndgameMin = 5; // Reduced from 10
+static const int PassedEndgameMax = 35; // Reduced from 70
 
 static const int UnstoppablePasser = 800;
 static const int FreePasser = 60;
