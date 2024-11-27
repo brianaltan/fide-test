@@ -60,7 +60,7 @@ static const bool ExtendSingleReply = true; // true
 
 // history pruning
 
-static /* const */ bool UseHistory = false;
+static /* const */ bool UseHistory = true;
 static const int HistoryDepth = 3;
 static const int HistoryMoveNb = 3;
 static /* const */ int HistoryValue = 9830; // 60%
