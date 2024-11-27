@@ -512,3 +512,4 @@ bool piece_attack_king(const board_t * board, int piece, int from, int king) {
 }
 
 // end of attack.cpp
+
