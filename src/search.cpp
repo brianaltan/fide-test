@@ -47,7 +47,7 @@ static const bool UseEarly = true; // early iteration end
 static const double EarlyRatio = 0.60;
 
 static const bool UseBad = true;
-static const int BadThreshold = 50; // 50
+static const int BadThreshold = 5; // 5
 static const bool UseExtension = true;
 
 // variables
@@ -95,8 +95,8 @@ void search_clear() {
 
    SearchInfo->can_stop = false;
    SearchInfo->stop = false;
-   SearchInfo->check_nb = 10000; // was 100000
-   SearchInfo->check_inc = 10000; // was 100000
+   SearchInfo->check_nb = 5000; // Change from 10000 to 5000
+   SearchInfo->check_inc = 5000; // Change from 10000 to 5000
    SearchInfo->last_time = 0.0;
 
    // SearchBest
@@ -166,7 +166,7 @@ void search() {
 
    if (LIST_SIZE(SearchInput->list) <= 1) {
       SearchInput->depth_is_limited = true;
-      SearchInput->depth_limit = 4; // was 1
+      SearchInput->depth_limit = 2; // Change from 4 to 2
    }
 
    // SearchInfo
