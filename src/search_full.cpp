@@ -32,8 +32,8 @@ static const bool UseDistancePruning = true;
 
 // transposition table
 
-static const bool UseTrans = true;
-static const int TransDepth = 1;
+static const bool UseTrans = false;
+static const int TransDepth = 0;
 
 static const bool UseMateValues = true; // use mate values from shallower searches?
 
@@ -42,16 +42,16 @@ static const bool UseMateValues = true; // use mate values from shallower search
 static /* const */ bool UseNull = true;
 static /* const */ bool UseNullEval = true; // true
 static const int NullDepth = 2;
-static /* const */ int NullReduction = 3;
+static /* const */ int NullReduction = 2;
 
 static /* const */ bool UseVer = true;
 static /* const */ bool UseVerEndgame = true; // true
-static /* const */ int VerReduction = 5; // was 3
+static /* const */ int VerReduction = 3; // was 3
 
 // move ordering
 
 static const bool UseIID = true;
-static const int IIDDepth = 3;
+static const int IIDDepth = 2;
 static const int IIDReduction = 2;
 
 // extensions
@@ -61,8 +61,8 @@ static const bool ExtendSingleReply = true; // true
 // history pruning
 
 static /* const */ bool UseHistory = true;
-static const int HistoryDepth = 3;
-static const int HistoryMoveNb = 3;
+static const int HistoryDepth = 1;
+static const int HistoryMoveNb = 1;
 static /* const */ int HistoryValue = 9830; // 60%
 static const bool HistoryReSearch = true;
 
